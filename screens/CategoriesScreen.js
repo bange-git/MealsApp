@@ -1,10 +1,14 @@
-import { View, FlatList} from "react-native";
+import { View, FlatList } from "react-native";
 import CategoriesGridTitle from "../components/CategoriesGridTitle";
 import { CATEGORIES } from "../data/dummy-data";
 
-const CategoriesScreen = () => {
+const CategoriesScreen = ({navigation}) => {
+    
   const renderCategoryItem = ({ item }) => {
-    return <CategoriesGridTitle title={item.title} color={item.color} />;
+    const pressHandler = () => {
+        navigation.navigate('MealsOverview')
+    }
+    return <CategoriesGridTitle title={item.title} color={item.color} onPress={pressHandler} />;
   };
   return (
     <View>
