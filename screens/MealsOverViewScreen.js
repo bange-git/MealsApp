@@ -36,7 +36,6 @@ const MealsOverViewScreen = ({ route, navigation }) => {
 
   return (
     <View>
-      <Text>Meals Overview </Text>
       <FlatList data={displayMeals} renderItem={renderMealsItem} />
     </View>
   );
